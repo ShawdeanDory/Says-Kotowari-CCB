@@ -1,0 +1,92 @@
+{
+  "pages": [
+    "pages/cx/cx",
+    "pages/index/index",
+    "pages/daohang/daohang",
+    "pages/wjmm/wjmm",
+    "pages/3_2/3_2",
+    "pages/3_3/3_3",
+    "pages/3_4/3_4",
+    "pages/3_5/3_5",
+    "pages/3_6/3_6",
+    "pages/3_7/3_7",
+    "pages/3_8/3_8",
+    "pages/3_9/3_9",
+    "pages/chapter3/chapter3",
+    "pages/chapter4/chapter4",
+    "pages/chouren/chouren",
+    "pages/4_1/4_1",
+    "pages/4_2/4_2",
+    "pages/4_3/4_3",
+    "pages/4_4/4_4",
+    "pages/4_5/4_5",
+    "pages/4_6/4_6",
+    "pages/4_7/4_7",
+    "pages/4_8/4_8",
+    "pages/4_9/4_9",
+    "pages/4_10/4_10",
+    "pages/detail/detail",
+    "pages/chapter5/chapter5",
+    "pages/5_1/5_1",
+    "pages/5_2/5_2",
+    "pages/5_3/5_3",
+    "pages/5_4/5_4",
+    "pages/5_5/5_5",
+    "pages/5_6/5_6",
+    "pages/5_7/5_7",
+    "pages/5_8/5_8",
+    "pages/copy/copy",
+    "pages/xcx/xcx",
+    "pages/lesson/lesson",
+    "pages/toi/toi",
+    "pages/sjjg/sjjg",
+    "pages/chouqian/chouqian",
+    "pages/import/import",
+    "pages/square/square",
+    "pages/visit/visit"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "navigationBarTitleText": "String"
+  },
+ 
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#00f",
+    "list": [
+      {
+        "pagePath": "pages/daohang/daohang",
+        "text": "项目",
+        "iconPath": "/images/zj-off.png",
+        "selectedIconPath": "/images/zj-on.png"
+      },
+      {
+        "pagePath": "pages/cx/cx",
+        "text": "实用功能",
+        "iconPath": "/images/kj-off.png",
+        "selectedIconPath": "/images/kj-on.png"
+      },
+      {
+        "pagePath": "pages/lesson/lesson",
+        "text": "我的课表",
+        "iconPath": "/images/zj-off.png",
+        "selectedIconPath": "/images/zj-on.png"
+      },{
+        "pagePath": "pages/square/square",
+        "text": "课表广场",
+        "iconPath": "/images/zj-off.png",
+        "selectedIconPath": "/images/zj-on.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示" 
+    }
+  },
+ 
+  "requiredPrivateInfos": ["getLocation"],
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
