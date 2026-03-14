@@ -1,0 +1,14 @@
+<!--pages/4_4/4_4.wxml-->
+<navigation-bar title="4_4" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="box">
+<view class="title">滑动条和颜色</view>
+<text>红色滑动条</text>
+<slider bindchanging="colorChanging" data-color="r" value="{{r}}" max="255" block-color="red" show-value="true"/>
+<text>绿色滑动条</text>
+<slider bindchanging="colorChanging" data-color="g" value="{{g}}" max="255" block-color="green" show-value="true"/>
+<text>蓝色滑动条</text>
+<slider bindchanging="colorChanging" data-color="b" value="{{b}}" max="255" block-color="blue" show-value="true"/>
+<text>透明度滑动条</text>
+<slider bindchanging="colorChanging" data-color="a" value="{{a}}" max="1" block-color="purple" step="0.01" show-value="true"/>
+<view class="colorarea" style="background-color: rgba({{r}},{{g}},{{b}},{{a}});"></view>
+</view>

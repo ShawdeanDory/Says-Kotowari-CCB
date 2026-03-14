@@ -1,0 +1,8 @@
+<!--pages/5_1/5_1.wxml-->
+<navigation-bar title="5_1" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="box">
+<view class="title">变脸游戏</view>
+<view>
+<image src="{{imgArr[index]}}" mode="widthFix" bind:tap="changeFace"/>
+</view>
+</view>

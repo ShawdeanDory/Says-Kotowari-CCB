@@ -1,0 +1,13 @@
+<!--pages/chapter4/chapter4.wxml-->
+<navigation-bar title="第四章作业" back="{{true}}" color="white" background="#F00"></navigation-bar>
+<import src="mulu.wxml"/>
+<template is="mulu" data="{{title:'4_1',url:'/pages/4_1/4_1'}}"/>
+<template is="mulu" data="{{title:'4_2',url:'/pages/4_2/4_2'}}"/>
+<template is="mulu" data="{{title:'4_3',url:'/pages/4_3/4_3'}}"/>
+<template is="mulu" data="{{title:'4_4',url:'/pages/4_4/4_4'}}"/>
+<template is="mulu" data="{{title:'4_5',url:'/pages/4_5/4_5'}}"/>
+<template is="mulu" data="{{title:'4_6',url:'/pages/4_6/4_6'}}"/>
+<template is="mulu" data="{{title:'4_7',url:'/pages/4_7/4_7'}}"/>
+<template is="mulu" data="{{title:'4_8',url:'/pages/4_8/4_8'}}"/>
+<template is="mulu" data="{{title:'4_9',url:'/pages/4_9/4_9'}}"/>
+<template is="mulu" data="{{title:'4_10',url:'/pages/4_10/4_10'}}"/>

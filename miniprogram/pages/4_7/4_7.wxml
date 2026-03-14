@@ -1,0 +1,12 @@
+<!--pages/4_7/4_7.wxml-->
+<navigation-bar title="4_7" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="box">
+<view class="title">图片展示</view>
+<view wx:for="{{imgArray}}">
+<view>{{item.text}}</view>
+<view class="imgLayout">
+<image src="{{src}}" mode="{{item.mode}}"/>
+</view>
+----------------------------
+</view>
+</view>

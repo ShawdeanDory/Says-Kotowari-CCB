@@ -1,0 +1,29 @@
+// pages/4_5/4_5.js
+Page({
+data:{
+  background:['bc-red','bc-green','bc-blue'],
+  indicatorDots:true,
+  autoplay:true,
+  circular:true,
+  vertical:true,
+  interval:2000,
+  duration:500,
+},
+changeIndicatorDots:function(e){
+  this.setData({
+    indicatorDots:this.data.indicatorDots
+  })
+},changeAutoplay:function(e){
+  this.setData({
+    autoplay:this.data.autoplay
+  })
+},changeCircular:function(e){
+  this.setData({
+    circular:this.data.circular
+  })
+},changeVertical:function(e){
+  this.setData({
+    vertical:this.data.vertical
+  })
+},
+})

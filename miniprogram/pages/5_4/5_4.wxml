@@ -1,0 +1,20 @@
+<!--pages/5_4/5_4.wxml-->
+<navigation-bar title="5_4" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="box">
+<view class="title">参数绘图</view>
+<view class="style01">
+<canvas canvas-id="myCanvas"/>
+</view>
+<view>
+<form bindsubmit="drawCircle" bindreset="clear">
+<input name='x' placeholder='请输入圆心x坐标' /> 
+<input name='y' placeholder='请输入圆心y坐标' />
+<input name='radius' placeholder='请输入圆的半径' />
+<view class="style02">
+<button type="primary" form-type="submit">画圆</button>
+<button type="primary" form-type="reset">清空</button>
+</view>
+</form>
+
+</view>
+</view>

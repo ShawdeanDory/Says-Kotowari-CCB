@@ -1,0 +1,268 @@
+/* index.wxss */
+page {
+  background-color: #f2f4f6;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  height: 100%;
+  overflow: hidden; /* 防止摇晃时出现滚动条 */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}
+
+/* 顶部区域 */
+.header {
+  margin-top: 100rpx; /* 留出顶部状态栏距离 */
+  text-align: center;
+  flex-shrink: 0;
+}
+.title {
+  font-size: 44rpx;
+  font-weight: 800;
+  color: #333;
+  letter-spacing: 4rpx;
+}
+.subtitle {
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 10rpx;
+  display: block;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* 内容居中容器 */
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
+  padding-bottom: 120rpx; /* 视觉上向上偏移一点点 */
+}
+
+/* --- 签筒样式 --- */
+.stage-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shaker-box {
+  width: 240rpx;
+  height: 360rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cup-body {
+  width: 180rpx;
+  height: 240rpx;
+  background: linear-gradient(135deg, #a65f34, #6f3e1d);
+  border-radius: 10rpx 10rpx 50rpx 50rpx;
+  border: 6rpx solid #4a2810;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 15rpx 30rpx rgba(0,0,0,0.25);
+}
+
+.cup-label {
+  width: 60rpx;
+  height: 120rpx;
+  border: 2rpx solid rgba(255,255,255,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fceabb;
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.stick-container {
+  position: absolute;
+  bottom: 220rpx;
+  z-index: 1;
+}
+.stick {
+  width: 18rpx;
+  height: 140rpx;
+  background-color: #deb887;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 8rpx 8rpx 0 0;
+  border: 1rpx solid #8b5a2b;
+}
+.stick.left { transform: translateX(-180%) rotate(-12deg); height: 120rpx; }
+.stick.right { transform: translateX(80%) rotate(12deg); height: 130rpx; }
+
+.instruction {
+  margin-top: 60rpx;
+  color: #888;
+  font-size: 30rpx;
+  background: rgba(255,255,255,0.6);
+  padding: 10rpx 30rpx;
+  border-radius: 30rpx;
+}
+
+/* --- 摇动动画 --- */
+.shake-anim {
+  animation: shake 0.4s infinite;
+}
+@keyframes shake {
+  0% { transform: rotate(0deg) translate(0, 0); }
+  25% { transform: rotate(-8deg) translate(-10rpx, 0); }
+  50% { transform: rotate(0deg) translate(0, -10rpx); }
+  75% { transform: rotate(8deg) translate(10rpx, 0); }
+  100% { transform: rotate(0deg) translate(0, 0); }
+}
+
+/* --- 结果卡片 --- */
+.result-card {
+  width: 100%;
+  max-width: 600rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 50rpx 40rpx;
+  box-shadow: 0 20rpx 60rpx rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40rpx) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.hex-name {
+  font-size: 64rpx;
+  font-weight: 900;
+  color: #333;
+  display: block;
+  margin-bottom: 10rpx;
+}
+.hex-tags {
+  display: flex;
+  gap: 15rpx;
+  justify-content: center;
+}
+.tag-nature, .tag-symbol {
+  font-size: 24rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+  background: #f0f0f0;
+  color: #666;
+}
+.tag-nature.good { background: #fff1f0; color: #f5222d; }
+.tag-nature.bad { background: #e6f7ff; color: #1890ff; }
+
+/* 六爻绘制 */
+.hexagram-visual {
+  display: flex;
+  flex-direction: column-reverse; /* 倒序，让初爻在最下 */
+  gap: 14rpx;
+  margin: 20rpx 0 40rpx 0;
+  padding: 20rpx;
+  background: #fafafa;
+  border-radius: 12rpx;
+}
+.yao-line {
+  width: 240rpx;
+  height: 20rpx;
+  background-color: #333;
+  border-radius: 4rpx;
+}
+/* 阴爻：中间断开 - 使用渐变实现 */
+.yao-line.yin {
+  background: linear-gradient(to right, #333 42%, transparent 42%, transparent 58%, #333 58%);
+}
+
+/* 解释区 */
+.card-body {
+  width: 100%;
+}
+.explain-box {
+  text-align: justify;
+  margin-bottom: 30rpx;
+}
+.explain-text {
+  font-size: 32rpx;
+  color: #444;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #eee;
+  margin: 30rpx 0;
+}
+/* 宜忌建议容器 */
+.advice-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25rpx; /* 加大行间距更美观 */
+  width: 100%;
+}
+
+.advice-row {
+  display: flex;
+  align-items: flex-start; /* 确保标签对齐文字第一行 */
+  width: 100%;
+}
+
+/* 统一标签样式 */
+.advice-label {
+  flex-shrink: 0; /* 防止标签被压缩 */
+  width: 60rpx;   /* 固定标签宽度，实现对齐的关键 */
+  height: 60rpx;  /* 设置为正方形 */
+  font-size: 28rpx;
+  border-radius: 12rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx; /* 标签与文字的间距 */
+}
+
+.advice-label.yi { 
+  background-color: #52c41a; /* 绿色宜 */
+}
+
+.advice-label.ji { 
+  background-color: #ff4d4f; /* 红色忌 */
+}
+
+/* 右侧内容样式 */
+.advice-content {
+  flex: 1; /* 占据剩余全部空间 */
+  font-size: 30rpx;
+  color: #444;
+  line-height: 60rpx; /* 与标签高度一致，实现视觉水平居中 */
+  text-align: left;   /* 确保左对齐 */
+}
+
+.footer-tip {
+  margin-top: 50rpx;
+  font-size: 22rpx;
+  color: #ccc;
+}

@@ -1,0 +1,7 @@
+<!--pages/5_2/5_2.wxml-->
+<navigation-bar title="5_2" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="box">
+<view class="title">阶乘计算器</view>
+<input type="number" bindinput="getInput" placeholder="请输入要求阶乘的数"/>
+<text>结果为：{{result}}</text>
+</view>

@@ -1,0 +1,24 @@
+/* pages/5_8/5_8.wxss */
+.animation-area{
+display:flex;
+width:100%;
+padding-top:150rpx;
+padding-bottom:150rpx;
+justify-content:center;
+overflow:hidden;
+background-color:#fff;
+border:1px solid sandybrown;margin-bottom:10px;
+}
+.animation-element{
+width:200rpx;
+height:200rpx;
+background-image: url(https://tse3-mm.cn.bing.net/th/id/OIP-C.RhLRbcQX6-obQFxRblnBfwAAAA?w=115&h=170&c=7&r=0&o=5&dpr=1.5&pid=1.7);
+}
+.btn-row{
+/*按钮布局*/
+display:flex;
+flex-direction:row;
+justify-content:space-around;}
+button {
+/*按钮样式 */
+margin:5px;}

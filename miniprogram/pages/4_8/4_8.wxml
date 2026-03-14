@@ -1,0 +1,12 @@
+<!--pages/4_8/4_8.wxml-->
+<navigation-bar title="4_8" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="box">
+<view class="title">音频展示</view>
+<audio src="{{src}}" poster="{{poster}}" name="{{name}}" author="{{author}}" id="myaudio" controls loop></audio>
+<view class="btnLayout">
+<button bind:tap="audioPlay">播放</button>
+<button bind:longtap="audioPause">暂停</button>
+<button bind:tap="audio14">设置当前播放时间为1秒</button>
+<button bind:tap="audioStart">回到开头</button>
+</view>
+</view>

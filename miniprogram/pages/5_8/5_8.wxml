@@ -1,0 +1,26 @@
+<!--pages/5_8/5_8.wxml-->
+<navigation-bar title="5_8" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="box">
+    <view class='title'>动画演示
+    </view>
+    <view class="animation-area">
+        <view class="animation-element" animation="{{animation}}"></view>
+    </view>
+    <view class='btn-row'>
+        <button bind:tap="rotate" style='width:24%;'>旋转</button>
+        <button bind:tap="scale" style='width:24%;'>缩放</button>
+        <button bind:tap="translate" style='width:24%;'>移动</button>
+        <button bind:tap="skew" style='width:24%;'>倾斜</button>
+    </view>
+    <view cass='btn-row'>
+        <button bind:tap="rotateAndScale" style='width:48%;'>旋转并缩放</button>
+        <button bind:tap="rotateThenScale" style='width:48%;'>旋转后缩放</button>
+    </view>
+    <view class='btn-row'>
+        <button bind:tap="all" style='width:48%;'>同时展示全部</button>
+        <button bind:tap="allInQueue" style='width:48%;'>顺序展示全部</button>
+    </view>
+    <view>
+        <button bindtap="reset" style='width:96%;'>还原</button>
+    </view>
+</view>

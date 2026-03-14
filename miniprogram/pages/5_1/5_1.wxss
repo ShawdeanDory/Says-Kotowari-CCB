@@ -1,0 +1,4 @@
+/* pages/5_1/5_1.wxss */
+image{
+    margin: 10px;
+}

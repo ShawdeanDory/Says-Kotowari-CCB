@@ -1,0 +1,67 @@
+<view class="container">
+  <view class="header">
+    <text class="title">每日一签</text>
+    <text class="subtitle">{{todayStr}}</text>
+  </view>
+
+  <view class="content-wrapper">
+    
+    <view class="stage-area" wx:if="{{!hasDrawn}}">
+      <view class="shaker-box {{isAnimating ? 'shake-anim' : ''}}" bindtap="startDivination">
+        <view class="stick-container">
+          <view class="stick"></view>
+          <view class="stick left"></view>
+          <view class="stick right"></view>
+        </view>
+        <view class="cup-body">
+          <view class="cup-label">
+            <text>抽</text>
+            <text>签</text>
+          </view>
+        </view>
+      </view>
+      <view class="instruction">
+        <text wx:if="{{!isAnimating}}">摇一摇手机 或 点击签筒</text>
+        <text wx:else>诚心祈祷...</text>
+      </view>
+    </view>
+
+    <view class="result-card fade-in" wx:else>
+      <view class="card-header">
+        <text class="hex-name">{{result.name}}</text>
+        <view class="hex-tags">
+          <text class="tag-nature {{result.nature==='上上签'||result.nature==='上签'?'good':(result.nature==='下下签'?'bad':'')}}">{{result.nature}}</text>
+          <text class="tag-symbol">{{result.symbol}}</text>
+        </view>
+      </view>
+      
+      <view class="hexagram-visual">
+        <block wx:for="{{result.lines}}" wx:key="index">
+          <view class="yao-line {{item === 1 ? 'yang' : 'yin'}}"></view>
+        </block>
+      </view>
+
+      <view class="card-body">
+        <view class="explain-box">
+          <text class="explain-text">{{result.explain}}</text>
+        </view>
+        
+        <view class="divider"></view>
+
+        <view class="advice-section">
+          <view class="advice-row">
+            <text class="advice-label yi">宜</text>
+            <text class="advice-content">{{result.yi}}</text>
+          </view>
+          <view class="advice-row">
+            <text class="advice-label ji">忌</text>
+            <text class="advice-content">{{result.ji}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="footer-tip">明日再来问卜</view>
+    </view>
+
+  </view>
+</view>

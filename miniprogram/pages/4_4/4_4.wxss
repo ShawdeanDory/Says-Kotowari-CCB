@@ -1,0 +1,5 @@
+/* pages/4_4/4_4.wxss */
+.colorarea{
+  width: 335px;
+height: 100px;
+}

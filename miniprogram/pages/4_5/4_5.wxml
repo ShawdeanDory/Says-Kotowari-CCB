@@ -1,0 +1,30 @@
+<!--pages/4_5/4_5.wxml-->
+<navigation-bar title="4_5" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="box">
+<view class="title">Swiper And Switch(otto)</view>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" duration="{{duration}}">
+  <block wx:for="{{background}}" wx:key="{{index}}">
+    <swiper-item>
+      <view class="{{item}}">
+      <image src="/images/sddl.png" mode="scaleToFill"/>
+    </view>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="waikuang">
+<text class="myleft">指示点</text>
+<switch checked="{{indicatorDots}}" bindchange="changeIndicatorDots"/>
+</view>
+<view class="waikuang">
+<text class="myleft">自动播放</text>
+<switch checked="{{autoplay}}" bindchange="changeAutoplay"/>
+</view>
+<view class="waikuang">
+<text class="myleft">衔接滑动</text>
+<switch checked="{{circular}}" bindchange="changeCircular"/>
+</view>
+<view class="waikuang">
+<text class="myleft">竖向</text>
+<switch checked="{{vertical}}" bindchange="changeVertical"/>
+</view>
+</view>

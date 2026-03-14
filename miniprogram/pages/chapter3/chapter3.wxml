@@ -1,0 +1,11 @@
+<!--pages/chapter3/chapter3.wxml-->
+<navigation-bar title="第三章作业" back="{{true}}" color="white" background="#F00"></navigation-bar>
+<import src="mulu.wxml"/>
+<template is="mulu" data="{{title:'3_2',url:'/pages/3_2/3_2'}}"/>
+<template is="mulu" data="{{title:'3_3',url:'/pages/3_3/3_3'}}"/>
+<template is="mulu" data="{{title:'3_4',url:'/pages/3_4/3_4'}}"/>
+<template is="mulu" data="{{title:'3_5',url:'/pages/3_5/3_5'}}"/>
+<template is="mulu" data="{{title:'3_6',url:'/pages/3_6/3_6'}}"/>
+<template is="mulu" data="{{title:'3_7',url:'/pages/3_7/3_7'}}"/>
+<template is="mulu" data="{{title:'3_8',url:'/pages/3_8/3_8'}}"/>
+<template is="mulu" data="{{title:'3_9',url:'/pages/3_9/3_9'}}"/>

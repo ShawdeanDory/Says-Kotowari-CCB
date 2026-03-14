@@ -1,0 +1,33 @@
+/* pages/chapter3/chapter3.wxss */
+/* pages/daohang/daohang.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+navigator{
+    margin: 5px;
+    font-size: 20px;
+  }
+  .waikuang{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px;
+    padding: 5px 0px;
+  }
+  .myleft{
+    margin-right: 10rpx;
+    
+  }
+  .mycenter{
+    flex: 1;
+  }
+  .myright{
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 5px;
+  }

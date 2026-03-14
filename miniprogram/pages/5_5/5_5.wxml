@@ -1,0 +1,14 @@
+<!--pages/5_5/5_5.wxml-->
+<navigation-bar title="5_5" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="box">
+<view class="title">变形</view>
+<view class="style01">
+<canvas canvas-id="myCanvas"/>
+</view>
+<view class="style02">
+<button type="primary" bind:tap="drawRect">绘图</button>
+<button type="primary" bind:tap="scale">放大</button>
+<button type="primary" bind:tap="translate">移动</button>
+<button type="primary" bind:tap="rotate">旋转</button>
+</view>
+</view>

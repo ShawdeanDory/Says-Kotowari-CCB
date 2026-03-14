@@ -1,0 +1,8 @@
+/* pages/4_2/4_2.wxss */
+input,button,text{
+  font-size: 20px;
+  margin: 20px 0;
+}
+input{
+  border-bottom: 1px solid blue;
+}
