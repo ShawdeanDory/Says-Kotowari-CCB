@@ -1,0 +1,7 @@
+<!--pages/daohang/daohang.wxml-->
+<navigation-bar title="导航" back="{{false}}" color="white" background="#F00"></navigation-bar>
+<import src="mulu.wxml"/>
+<!-- <template is="mulu" data="{{title:'第三章作业',url:'/pages/chapter3/chapter3'}}"/>
+<template is="mulu" data="{{title:'第四章作业',url:'/pages/chapter4/chapter4'}}"/>
+<template is="mulu" data="{{title:'第五章作业',url:'/pages/chapter5/chapter5'}}"/> -->
+<template is="mulu" data="{{title:'校园导航系统',url:'/pages/sjjg/sjjg'}}"/>

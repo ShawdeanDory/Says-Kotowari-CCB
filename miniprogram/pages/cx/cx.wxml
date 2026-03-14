@@ -1,0 +1,13 @@
+<!--pages/cx/cx.wxml-->
+<navigation-bar title="实用功能" back="{{false}}" color="white" background="#F00"></navigation-bar>
+<import src="mulu.wxml"/>
+<template is="mulu" data="{{title:'大转盘',url:'/pages/chouren/chouren'}}"/>
+<template is="mulu" data="{{title:'网址',url:'/pages/copy/copy'}}"/>
+<template is="mulu" data="{{title:'小程序',url:'/pages/xcx/xcx'}}"/>
+<template is="mulu" data="{{title:'课表',url:'/pages/lesson/lesson'}}"/>
+<template is="mulu" data="{{title:'每日一签',url:'/pages/chouqian/chouqian'}}"/>
+<text user-select="true" wx:if="{{isThursday}}" class="title" style="margin: 10px;">{{randomItem}}
+</text>
+<text style="text-align: center;">如果你看到这条消息，请叫我去工作！！！</text>
+<!-- <text style="text-align: center;">萌喵美喵[转圈][爱心]</text> -->
+<include src="footer.wxml" />

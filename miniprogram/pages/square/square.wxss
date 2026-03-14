@@ -1,0 +1,132 @@
+/* 全局背景 */
+page {
+  background-color: #f6f7f9;
+}
+
+.container {
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* 顶部标题栏 */
+.header-box {
+  background: #fff;
+  padding: 40rpx 30rpx;
+  margin-bottom: 24rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.title {
+  display: block;
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 12rpx;
+}
+
+.subtitle {
+  font-size: 26rpx;
+  color: #999;
+}
+
+/* 列表容器 */
+.list-container {
+  padding: 0 30rpx;
+  padding-bottom: 60rpx;
+}
+
+/* 空状态 */
+.empty-state {
+  margin-top: 150rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.empty-text {
+  color: #999;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+/* 用户卡片 */
+.user-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 24rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.04);
+  transition: all 0.2s ease;
+}
+
+/* 点击时的按压效果 */
+.user-card:active {
+  transform: scale(0.98);
+  background-color: #fafafa;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #eee;
+  margin-right: 24rpx;
+  border: 4rpx solid #f0f0f0;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nickname {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+}
+
+.tag {
+  background-color: #e6f7ff;
+  color: #1890ff;
+  font-size: 20rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+  margin-right: 16rpx;
+  font-weight: 500;
+}
+
+.time {
+  font-size: 22rpx;
+  color: #bbb;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.arrow .icon {
+  margin-left: 8rpx;
+  font-size: 28rpx;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.footer-tip {
+  text-align: center;
+  margin-top: 40rpx;
+  font-size: 22rpx;
+  color: #ccc;
+}

@@ -1,0 +1,75 @@
+/* pages/import/import.wxss */
+page { background: #f6f7f9; padding: 30rpx; box-sizing: border-box; }
+
+.card { 
+  background: #fff; 
+  border-radius: 20rpx; 
+  padding: 30rpx; 
+  margin-bottom: 30rpx; 
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.05); 
+}
+
+.title { 
+  font-weight: 800; 
+  border-left: 8rpx solid #6c5ce7; 
+  padding-left: 20rpx; 
+  margin-bottom: 30rpx; 
+  font-size: 32rpx; 
+  color: #333;
+}
+
+.token-input { 
+  width: 100%; 
+  height: 200rpx; 
+  background: #f9f9f9; 
+  padding: 20rpx; 
+  box-sizing: border-box; 
+  border-radius: 12rpx; 
+  font-size: 26rpx; 
+  margin-bottom: 30rpx;
+}
+
+.btn-primary {
+  background: #6c5ce7; 
+  color: #fff; 
+  border-radius: 12rpx;
+  font-weight: bold;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.input-row {
+  border-bottom: 1rpx solid #6c5ce7; /* 高亮输入框底部 */
+}
+
+.label { font-size: 28rpx; color: #666; font-weight: bold; }
+.value { font-size: 28rpx; color: #333; }
+
+/* 昵称输入框样式 */
+.name-input {
+  text-align: right;
+  font-size: 28rpx;
+  color: #333;
+  width: 60%;
+}
+
+.switch-box { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin: 40rpx 0; 
+}
+
+.btn-save {
+  background: #ff7675; 
+  color: #fff;
+  border-radius: 12rpx;
+  font-weight: bold;
+}

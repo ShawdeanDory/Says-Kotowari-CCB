@@ -1,0 +1,62 @@
+<view class="main-box" style="width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: stretch; overflow: hidden; box-sizing: border-box; padding-top: {{headerPaddingTop}}px;">
+  
+  <view class="user-card-header">
+    <view class="user-info">
+      <view class="avatar-box">
+        <button class="avatar-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+          <image class="avatar-img" src="{{userInfo.avatarUrl || defaultAvatar}}" mode="aspectFill"></image>
+        </button>
+      </view>
+      <view class="greeting-text">
+        <input class="name-input" type="nickname" value="{{userInfo.nickName}}" placeholder="点击设置昵称" placeholder-class="name-placeholder" bindblur="onNameChange" bindinput="onNameInput" />
+        <text class="h2">点击头像/昵称修改</text>
+      </view>
+    </view>
+    <view class="action-btn" bindtap="goToImport">
+      <text class="btn-icon">+</text>
+      <text>课表</text>
+    </view>
+  </view>
+
+  <view class="date-bar" style="display: flex; flex-direction: row; width: 100%;">
+    <view class="month-box">
+      <text class="month-num">{{currentMonth}}</text>
+      <text class="month-cn">月</text>
+    </view>
+    <view class="week-row" style="display: flex; flex-direction: row; flex: 1; justify-content: space-around;">
+      <view wx:for="{{['一','二','三','四','五']}}" wx:key="*this" 
+            class="week-item {{todayIndex === index ? 'active-day' : ''}}">
+        <text class="week-name">周{{item}}</text>
+        <view class="indicator" wx:if="{{todayIndex === index}}"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="scroll-area" style="flex: 1; width: 100%; position: relative;">
+    <view class="timetable-body" style="display: flex; flex-direction: row; width: 100%; min-height: 100%;">
+      
+      <view class="sidebar">
+        <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}" wx:key="*this" class="sidebar-item">
+          <text class="node-num">{{item}}</text>
+        </view>
+      </view>
+
+      <view class="course-container" style="flex: 1; position: relative;">
+        <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}" wx:key="l" class="grid-line" style="top: {{(item-1)*110}}rpx;"></view>
+
+        <view wx:for="{{myCourses}}" wx:key="index" 
+              class="course-card"
+              bindtap="showCourseDetail"
+              data-item="{{item}}"
+              style="{{item.styleString}}">
+          <view class="card-inner">
+            <text class="c-name">{{item.name}}</text>
+            <text class="c-room" wx:if="{{item.room}}">@{{item.room}}</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+</view>

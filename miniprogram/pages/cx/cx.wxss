@@ -1,0 +1,42 @@
+/* pages/cx/cx.wxss */
+/* pages/daohang/daohang.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+.title{
+  color: purple;
+  font-size: 80rpx;
+}
+navigator{
+    margin: 5px;
+    font-size: 20px;
+  }
+  .waikuang{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px;
+    padding: 5px 0px;
+  }
+  .myleft{
+    margin-right: 10rpx;
+    
+  }
+  .mycenter{
+    flex: 1;
+  }
+  .myright{
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 5px;
+  }
+  .footer{
+    margin: 20rpx;
+    font-size: 15px;
+    text-align: center;
+}

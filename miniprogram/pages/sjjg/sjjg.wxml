@@ -1,0 +1,104 @@
+<!--地图容器 - 扩大地图区域 -->
+<map id="myMap" style="width: 100%; height: 60vh;" longitude="{{longitude}}" latitude="{{latitude}}" scale='{{scale}}' polyline="{{polyline}}" markers="{{markers}}" covers="{{covers}}" show-location></map>
+
+<!-- 控制面板 - 缩小到底部 -->
+<view class="control-panel">
+  <!-- 距离和时间显示 -->
+  <view class="info-section">
+    <view class="info-item">
+      <text class="info-label">距离：</text>
+      <text class="info-value">{{resultDistance}}</text>
+    </view>
+    <view class="info-item">
+      <text class="info-label">步行时间：</text>
+      <text class="info-value">{{walkingTime}}</text>
+    </view>
+    <view class="info-item">
+      <text class="info-label">骑行时间：</text>
+      <text class="info-value">{{cyclingTime}}</text>
+    </view>
+  </view>
+
+  <!-- 地点选择区域 -->
+  <view class="location-section" wx:if="{{!isNavigating}}">
+    <view class="location-item">
+      <text class="location-label"></text>
+      <view class="location-control">
+        <button class="location-btn select-btn" bindtap="chooseStart">
+          {{startBuilding ? startBuilding : '选择起点'}}
+        </button>
+        <button class="location-btn clear-btn" bindtap="clearStart" disabled="{{!startBuilding}}">清除</button>
+      </view>
+    </view>
+
+    <view class="location-item">
+      <text class="location-label"></text>
+      <view class="location-control">
+        <button class="location-btn select-btn" bindtap="chooseEnd">
+          {{endBuilding ? endBuilding : '选择终点'}}
+        </button>
+        <button class="location-btn clear-btn" bindtap="clearEnd" disabled="{{!endBuilding}}">清除</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 导航按钮 -->
+  <view class="navigation-buttons">
+    <button class="nav-btn" bindtap="driving" disabled="{{openNav || isNavigating}}" wx:if="{{!isNavigating}}">开始导航</button>
+    <button class="stop-btn" bindtap="stopNavigation" wx:if="{{isNavigating}}">停止导航</button>
+  </view>
+</view>
+
+<!-- 建筑选择器 - 带搜索功能和滚动 -->
+<view class="building-picker" wx:if="{{showBuildingPicker}}">
+  <view class="picker-mask" bindtap="closeBuildingPicker"></view>
+  <view class="picker-content" style="height: {{pickerHeight}}">
+    <!-- 顶部拖拽条 -->
+    <view class="drag-handle"></view>
+    
+    <view class="picker-header">
+      <text class="picker-cancel" bindtap="closeBuildingPicker">取消</text>
+      <text class="picker-title">选择{{selectingStart ? '起点' : '终点'}}</text>
+    </view>
+    
+    <!-- 搜索框 -->
+    <view class="search-section">
+      <view class="search-input-wrapper">
+        <input class="search-input" 
+               placeholder="搜索校园地点..." 
+               value="{{searchText}}" 
+               bindinput="onSearchInput" />
+        <text class="search-clear" wx:if="{{searchText}}" bindtap="clearSearch">×</text>
+      </view>
+    </view>
+    
+    <!-- 建筑列表 - 添加滚动 -->
+    <scroll-view class="building-list" 
+                 scroll-y 
+                 scroll-top="{{pickerScrollTop}}"
+                 scroll-with-animation="true"
+                 enhanced="true"
+                 show-scrollbar="{{true}}"
+                 bindscroll="onPickerScroll">
+      <view wx:for="{{filteredBuildings}}" wx:key="index" class="building-item {{item.isMyLocation ? 'my-location-item' : ''}}" bindtap="selectBuilding" data-index="{{index}}">
+        <text class="building-name">{{item.name}}</text>
+        <text class="location-icon" wx:if="{{item.isMyLocation}}">📍</text>
+      </view>
+      <view wx:if="{{filteredBuildings.length === 0 && searchText}}" class="no-result">
+        <text>未找到"{{searchText}}"相关地点</text>
+        <text class="no-result-tip">尝试使用其他关键词搜索</text>
+      </view>
+      <view wx:if="{{filteredBuildings.length === 0 && !searchText}}" class="no-result">
+        <text>暂无地点数据</text>
+      </view>
+      
+      <!-- 底部填充，确保最后一项可见 -->
+      <view class="list-bottom-padding"></view>
+    </scroll-view>
+    
+    <!-- 滚动提示（只在有滚动时显示） -->
+    <view class="scroll-hint" wx:if="{{showScrollHint}}">
+      <text>↑ 滑动查看更多地点</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "课表广场",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#f6f7f9"
+}

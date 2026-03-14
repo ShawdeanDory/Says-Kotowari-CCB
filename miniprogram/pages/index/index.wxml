@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<navigation-bar title="xiaochengxu" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+        <view class="box">
+        <view class="form">
+            <view style="display: flex;">
+                <view style="color: {{c1}};font-size: 30px;">用</view>
+                <view style="color: {{c2}};font-size: 30px;">户</view>
+                <view style="color: {{c3}};font-size: 30px;">名</view>
+            </view>
+            </view>
+            
+            <view class="form" wx:if="{{!isRegister}}">
+                <input placeholder="请输入用户名" bindinput="bindUsernameInput" />
+                <view style="display: flex;">
+                    <view style="color: {{c4}};font-size: 30px;">密</view>
+                    <view style="color: {{c5}};font-size: 30px;">码</view>
+                </view>
+                <input placeholder="请输入密码" password bindinput="bindPasswordInput" />
+                <button type="primary" bindtap="handleLogin">登录</button>
+                <view class="form">
+                    <navigator url="/pages/chouren/chouren" style="font-size: smaller;color: royalblue;">忘记密码？</navigator>
+                    <text class="toggle-text" bindtap="toggleRegister">没有账号？去注册</text>
+                </view>
+            </view>
+            <!-- 注册表单 -->
+            <view class="form" wx:else>
+                <input placeholder="请输入用户名" bindinput="bindUsernameInput" />
+                <view style="display: flex;">
+                    <view style="color: {{c4}};font-size: 30px;">密</view>
+                    <view style="color: {{c5}};font-size: 30px;">码</view>
+                </view>
+                <input placeholder="请输入密码" password bindinput="bindPasswordInput" />
+                <button type="primary" bindtap="handleRegister">注册</button>
+                <text class="toggle-text" bindtap="toggleRegister">已有账号？去登录</text>
+            </view>
+            <!-- 提示信息 -->
+            <view class="message" wx:if="{{message}}">
+                <text>{{message}}</text>
+            </view>
+            
+        </view>
+        <include src="footer.wxml" />
+    <image src="https://wiki.ottohub.cn/images/thumb/5/58/%E6%A3%8D%E6%AF%8D.png/180px-%E6%A3%8D%E6%AF%8D.png" mode="center" bind:tap="xcx"/>
+
+
+</scroll-view>

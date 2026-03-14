@@ -1,0 +1,10 @@
+<template name="mulu">
+
+<navigator url="{{url}}" open-type="navigate">
+<view class="waikuang">
+<icon type="success"/>
+<view class="mycenter">{{title}}</view>
+<image src="/images/right-arrow.png" class="myright"/>
+</view>
+</navigator>
+</template>

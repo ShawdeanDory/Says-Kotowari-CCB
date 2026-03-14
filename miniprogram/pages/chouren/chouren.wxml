@@ -1,0 +1,55 @@
+<navigation-bar title="嘉然今天吃什么" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="container">
+  <view class="header">
+    <text class="title">今天吃什么？</text>
+    <text class="subtitle">好想吃丰川祥子的脚</text>
+  </view>
+
+  <view class="turntable-container">
+    <view class="turntable" style="background: {{wheelGradient}}">
+      <block wx:for="{{list}}" wx:key="index">
+        <view class="label" style="transform: rotate({{item.angle}}deg) translateY(-120rpx);">
+          <text style="transform: rotate(-{{item.angle}}deg)">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="pointer-container" style="transform: rotate({{rotateDeg}}deg); transition: transform {{duration}}s cubic-bezier(0.2, 0.8, 0.3, 1);">
+      <view class="pointer"></view>
+      <view class="pointer-center"></view>
+    </view>
+  </view>
+
+  <button class="start-btn" bindtap="startSpin" disabled="{{isSpinning || list.length === 0}}">
+    {{isSpinning ? '抽取中...' : '开始旋转'}}
+  </button>
+
+  <view class="divider"></view>
+
+  <view class="input-section">
+    <input class="input-box" placeholder="输入想吃的东西（如：丰川祥子的脚）" value="{{inputValue}}" bindinput="onInput" />
+    <button class="add-btn" size="mini" bindtap="addItem">添加</button>
+  </view>
+
+  <view class="preset-section">
+    <view class="preset-header-bar">
+      <view class="preset-title">推荐列表 (点击选择/删除)</view>
+      <view class="header-actions">
+        <view class="action-btn" bindtap="selectAll">全选</view>
+        <view class="divider-line">|</view>
+        <view class="action-btn" bindtap="clearSelection">清除</view>
+      </view>
+    </view>
+
+    <view class="grid-list">
+      <block wx:for="{{presets}}" wx:key="name">
+        <view class="grid-item {{item.selected ? 'active' : ''}}" bindtap="togglePreset" data-index="{{index}}">
+          <view class="checkbox {{item.selected ? 'checked' : ''}}">
+            <text wx:if="{{item.selected}}" class="check-mark">✓</text>
+          </view>
+          <text class="item-name">{{item.name}}</text>
+          <view class="delete-btn" catchtap="deleteItem" data-index="{{index}}">×</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

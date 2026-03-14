@@ -1,0 +1,14 @@
+<!--pages/copy/copy.wxml-->
+<!-- index.wxml -->
+<navigation-bar title="网址" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+
+<!-- index.wxml -->
+<view class="container">
+    <view class="title">点击复制</view>
+    <button class="copy-btn" bindtap="copyText1">选课</button>
+    <button class="copy-btn" bindtap="copyText2">学习通</button>
+    <button class="copy-btn" bindtap="copyText3">大物实验</button>
+    <button class="copy-btn" bindtap="copyText4">考试查询</button>
+  <button class="copy-btn" bindtap="copyText5">成绩查询</button>
+  <button class="copy-btn" bindtap="copyText6">crazygame</button>
+</view>

@@ -1,0 +1,5 @@
+<!--pages/wjmm/wjmm.wxml-->
+<navigation-bar title="忘记密码" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<image src="https://www.magesbox.com/data/upload/member/37570/6311fd14b0587.jpg" style="width: 400px;height: 350px;" bind:tap="djha"/>
+
+

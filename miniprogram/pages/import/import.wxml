@@ -1,0 +1,29 @@
+<view class="container">
+  
+  <view class="card">
+    <view class="title">第一步: 粘贴口令</view>
+    <textarea class="token-input" placeholder="请在此粘贴 WakeUp 分享口令..." bindinput="onInputToken" maxlength="-1"></textarea>
+    <button class="btn-primary" bindtap="importFromWakeUp">一键解析</button>
+  </view>
+
+  <view class="card" wx:if="{{hasData}}">
+    <view class="title">第二步: 完善信息并保存</view>
+    
+    <view class="info-row">
+      <text class="label">解析结果</text>
+      <text class="value">共 {{tempCourses.length}} 门课程</text>
+    </view>
+
+    <view class="info-row input-row">
+      <text class="label">我的昵称</text>
+      <input class="name-input" type="nickname" value="{{userInfo.nickName}}" placeholder="请输入展示昵称" bindinput="onNameInput" />
+    </view>
+
+    <view class="switch-box">
+      <text class="label">公开到广场</text>
+      <switch checked="{{isPublic}}" bindchange="switchChange" color="#6c5ce7"/>
+    </view>
+
+    <button class="btn-save" bindtap="saveToCloud">保存并覆盖旧课表</button>
+  </view>
+</view>

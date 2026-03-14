@@ -1,0 +1,48 @@
+<view class="container">
+  <view class="header-box">
+    <text class="title">课表广场</text>
+    <text class="subtitle">发现其他同学的课程安排</text>
+  </view>
+
+  <view class="list-container">
+    
+    <view wx:if="{{!userList || userList.length === 0}}" class="empty-state">
+      <image class="empty-img" src="/images/empty.png" mode="widthFix" wx:if="{{false}}"></image> <text class="empty-text">暂时还没有同学公开课表\n快去“导入”页面当第一个吧！</text>
+    </view>
+
+    <view 
+      wx:for="{{userList}}" 
+      wx:key="_id" 
+      class="user-card" 
+      bindtap="viewUserSchedule" 
+      data-id="{{item._openid}}"
+    >
+    <image class="avatar" src="{{item.userInfo.avatarUrl || defaultAvatar}}" mode="aspectFill"></image>
+      
+      <view class="info">
+        <text class="nickname">{{item.userInfo.nickName}}</text>
+        <view class="tags">
+          <text class="tag">已公开</text>
+          <text class="time">更新于 {{tools.sub(item.updateTime)}}</text>
+        </view>
+      </view>
+      
+      <view class="arrow">
+        <text>查看</text>
+        <text class="icon">></text>
+      </view>
+    </view>
+
+    <view class="footer-tip" wx:if="{{userList.length > 0}}">
+      <text>共发现 {{userList.length}} 位同学</text>
+    </view>
+  </view>
+</view>
+
+<wxs module="tools">
+  module.exports.sub = function(val) {
+    if (!val) return '刚刚'
+    // 截取前10位，变成 YYYY-MM-DD 格式
+    return val.substring(0, 10)
+  }
+</wxs>

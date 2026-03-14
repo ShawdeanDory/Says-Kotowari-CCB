@@ -1,0 +1,48 @@
+<navigation-bar title="小程序跳转" back="{{true}}" color="white" background="#F00"></navigation-bar>
+<!-- pages/index/index.wxml -->
+<text user-select="true" wx:if="{{isThursday}}">{{randomItem}}
+</text>
+<view class="image-container">
+    <view class="image-item">
+        <image src="https://tse1-mm.cn.bing.net/th/id/OIP-C.HmxTpJP7ZX6VuCAFlToCaQHaHd?rs=1&pid=ImgDetMain" bind:tap="nav_KFC"></image>
+    </view>
+    <view class="image-item">
+        <image src="/images/校园跑.png" bind:tap="nav_run"></image>
+    </view>
+    <view class="image-item">
+        <image src="https://ts1.tc.mm.bing.net/th/id/R-C.5a3685c20022088fb941e57c43121513?rik=scveFkTIwCDTEA&riu=http%3a%2f%2fpic.2265.com%2fupload%2f2018-6%2f2018661424315896.png&ehk=lur%2fabIQA6F7bGmxLyVJBiDdLqUMAA7ys97cC03jjO8%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" bind:tap="nav_huyou"></image>
+    </view>
+</view>
+
+<view class="image-container">
+    <view class="image-item">
+        <image src="https://ts1.tc.mm.bing.net/th/id/R-C.18c1f8dcff8dfde7cd4339b139fe03cd?rik=9OgD0DdBLzD9UQ&riu=http%3a%2f%2fofficialwebsitestorage.blob.core.chinacloudapi.cn%2fpublic%2ffiles%2fattachment%2fM+logo-red.jpg&ehk=Pyw%2fdZIf2z2%2fXCaVWP586p3rG48sEJp0qZLhhAePsMA%3d&risl=&pid=ImgRaw&r=0" bind:tap="nav_Mc"></image>
+    </view>
+    <view class="image-item">
+        <image src="https://static.foodtalks.cn/image/news/ff472a28d589dx4ca5eb237h530134ebe2cc.png" bind:tap="nav_dom"></image>
+    </view>
+    <view class="image-item">
+        <image src="https://pic.baike.soso.com/p/20140221/20140221165619-1980160076.jpg" bind:tap="nav_pizza"></image>
+    </view>
+</view>
+
+<view class="image-container">
+    <view class="image-item">
+        <image src="https://ts1.tc.mm.bing.net/th/id/R-C.8c2d61a457758ce7710ffe28d41fea2e?rik=hgFEMM%2bSoNYZaw&riu=http%3a%2f%2fwww.kuaipng.com%2fUploads%2fpic%2fw%2f2020%2f12-16%2f95747%2fwater_95747_698_691.25_.png&ehk=LOkC8ZdEHk%2bRGO9kM6ZABgPOn%2bTc%2f5j%2f6WO1R6ERaY8%3d&risl=&pid=ImgRaw&r=0" bind:tap="nav_luckin"></image>
+    </view>
+    <view class="image-item">
+        <image src="https://tse4-mm.cn.bing.net/th/id/OIP-C.jCxpqMlgoS-AS7l90apqagAAAA?rs=1&pid=ImgDetMain" bind:tap="nav_1pointpoint"></image>
+    </view>
+    <view class="image-item">
+        <image src="https://img.zcool.cn/community/02k0bwylpwxnqtylebctlq3334.png" bind:tap="nav_chagee"></image>
+    </view>
+</view>
+
+<view class="image-container">
+    <view class="image-item">
+        <image src="/images/hehe.png" bind:tap="nav_hehe"></image>
+    </view>
+    <view class="image-item">
+        <image src="https://tse4-mm.cn.bing.net/th/id/OIP-C.hOz6wFgElbu7tUhgP1SJFQHaHJ?rs=1&pid=ImgDetMain" bind:tap="nav_guozhi"></image>
+    </view>
+</view>
