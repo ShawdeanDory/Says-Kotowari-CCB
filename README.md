@@ -1,5 +1,5 @@
 # Says-Kotowari-CCB
-> **DOCUMENTATION** | 说的道理测测版 · 上海大学小程序课程作业
+> **DOCUMENTATION** | 说的道理测测版 · 上海大学移动应用设计与开发课程作业
 
 ---
 
