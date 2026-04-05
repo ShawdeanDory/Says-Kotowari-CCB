@@ -5,9 +5,9 @@ App({
       console.error('请使用 2.2.3 或以上的基础库以使用云能力');
     } else {
       wx.cloud.init({
-        env: 'cloud1-5g2co8aca3d5366b', 
-        traceUser: true,
-      });
+  env: 'your-env-id', // 替换为你的云环境ID
+  traceUser: true,
+    });
     }
 
     // 2. 初始化全局数据（先给个空对象，防止下面赋值失败）
