@@ -4,7 +4,7 @@ let QQMapWX = require('../utils/qqmap-wx-jssdk.min');
 
 // 实例化API核心类
 let qqmapsdk = new QQMapWX({
-  key: '73CBZ-CN2K3-IS73P-RNXHF-QQMIJ-DJBX5'
+  key: 'yourkey'
 });
 
 Page({
