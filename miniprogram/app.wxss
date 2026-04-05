@@ -1,0 +1,22 @@
+page {
+  background-color: #F7F8FA;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  --primary-color: #0052D9;
+  --card-bg: #FFFFFF;
+  --text-main: #333333;
+}
+@media (prefers-color-scheme: dark) {
+  page {
+    background-color: #121212;
+    --card-bg: #1E1E1E;
+    --text-main: #E0E0E0;
+  }
+}
+.card {
+  background-color: var(--card-bg);
+  border-radius: 16rpx;
+  padding: 32rpx;
+  margin: 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.04);
+}
+.title { color: var(--text-main); font-size: 34rpx; font-weight: bold; }

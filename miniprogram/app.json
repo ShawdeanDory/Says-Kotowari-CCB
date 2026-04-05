@@ -43,7 +43,12 @@
     "pages/chouqian/chouqian",
     "pages/import/import",
     "pages/square/square",
-    "pages/visit/visit"
+    "pages/visit/visit",
+    "pages/calculate/calculate",
+    "pages/add/add",
+    "pages/ocr/ocr",
+    "pages/analysis/analysis",
+    "pages/importgrade/importgrade"
   ],
   "window": {
     "navigationBarTextStyle": "black",
