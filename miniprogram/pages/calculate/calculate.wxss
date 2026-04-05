@@ -1,0 +1,87 @@
+.container { padding: 30rpx; background: #f8f9fa; min-height: 100vh; }
+
+/* GPA 卡片样式 */
+.gpa-card {
+  background: linear-gradient(135deg, #0052D9, #266FE8);
+  border-radius: 24rpx; padding: 40rpx; color: white;
+  box-shadow: 0 10rpx 30rpx rgba(0, 82, 217, 0.2);
+}
+.gpa-main { text-align: center; margin-bottom: 30rpx; }
+.gpa-num { font-size: 80rpx; font-weight: bold; display: block; }
+.gpa-label { font-size: 24rpx; opacity: 0.8; }
+.gpa-detail { display: flex; justify-content: space-around; border-top: 1rpx solid rgba(255,255,255,0.2); padding-top: 20rpx; }
+.detail-item { text-align: center; }
+.val { font-size: 32rpx; font-weight: 500; display: block; }
+.lab { font-size: 20rpx; opacity: 0.7; }
+
+/* 按钮行 */
+.action-row { display: flex; gap: 20rpx; margin: 30rpx 0; }
+.mini-btn { flex: 1; font-size: 28rpx; border-radius: 12rpx; background: white; color: #333; }
+.btn-import { background: #eef3fe; color: #0052D9; }
+
+/* 列表样式 */
+.list-section { background: white; border-radius: 20rpx; padding: 20rpx; }
+/* 新增的标题行容器 */
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding: 0 10rpx;
+}
+
+.section-title {
+  font-size: 26rpx;
+  color: #999;
+}
+
+/* 清空按钮样式 */
+.clear-all-btn {
+  font-size: 24rpx;
+  color: #ff4d4f; /* 红色警告色 */
+  padding: 10rpx 20rpx;
+  background: #fff1f0;
+  border-radius: 8rpx;
+  font-weight: 500;
+}
+
+/* 之前你的 .section-header 可以删掉或者注释掉 */
+.grade-list { height: calc(100vh - 550rpx); } /* 动态计算列表高度 */
+.grade-item {
+  display: flex; align-items: center; padding: 25rpx 10rpx;
+  border-bottom: 1rpx solid #f0f0f0; position: relative;
+}
+.item-left { flex: 1; }
+.c-name { font-size: 30rpx; color: #333; font-weight: 500; display: block; }
+.c-info { font-size: 22rpx; color: #999; }
+.item-right { text-align: right; margin-right: 60rpx; }
+.c-score { font-size: 32rpx; color: #0052D9; font-weight: bold; display: block; }
+.c-gp { font-size: 20rpx; color: #666; }
+.delete-icon { position: absolute; right: 10rpx; padding: 10rpx; }
+.empty { text-align: center; color: #ccc; padding-top: 100rpx; font-size: 28rpx; }
+/* 卡片内的点击提示文案 */
+.click-tip {
+  font-size: 20rpx;
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+/* 点击蓝色卡片时的反馈效果 */
+.card-hover {
+  transform: scale(0.97); /* 微微缩小 */
+  filter: brightness(0.9); /* 微微变暗 */
+  transition: all 0.2s ease;
+}
+
+/* 恢复双按钮的比例 */
+.action-row {
+  display: flex;
+  gap: 20rpx;
+  margin: 30rpx 0;
+}
+
+.mini-btn {
+  flex: 1;
+  font-size: 28rpx;
+}

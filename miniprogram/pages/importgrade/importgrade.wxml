@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="import-box" bindtap="goToImport">
+    <view class="upload-icon">
+      <icon type="download" size="60" color="#0052D9"></icon>
+    </view>
+    <text class="main-tip">点击上传 Excel/CSV 成绩单</text>
+    <text class="sub-tip">支持微信聊天记录中的 .xlsx 或 .csv 文件</text>
+    <view class="file-tags">
+      <text class="tag">自动识别学分</text>
+      <text class="tag">自动算绩点</text>
+    </view>
+  </view>
+
+  <view class="guide-card">
+    <view class="guide-title">💡 导入小贴士</view>
+    <view class="guide-item">1. 请先将电脑导出的成绩单发送至“文件传输助手”。</view>
+    <view class="guide-item">2. 点击上方蓝色区域，从聊天记录中选择该文件。</view>
+    <view class="guide-item">3. 系统将自动提取“课程名称”、“学分”和“绩点”。</view>
+  </view>
+
+  <view class="back-btn" bindtap="goBack">返回计算器</view>
+</view>

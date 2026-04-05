@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="chart-card">
+    <view class="title">绩点走势图</view>
+    <ec-canvas 
+  id="mychart-dom-line" 
+  canvas-id="mychart-line" 
+  ec="{{ ec }}" 
+  force-use-old-canvas="true">
+</ec-canvas>
+  </view>
+
+  <view class="data-table">
+    <view class="table-header">
+      <text>学期</text>
+      <text>平均绩点</text>
+    </view>
+    <view class="table-row" wx:for="{{trendData}}" wx:key="semester">
+      <text>{{item.semester}}</text>
+      <text class="gpa-bold">{{item.gpa}}</text>
+    </view>
+  </view>
+</view>

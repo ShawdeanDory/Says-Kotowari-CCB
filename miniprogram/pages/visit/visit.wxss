@@ -153,3 +153,57 @@ page {
   z-index: 99;
   box-shadow: 0 4rpx 15rpx rgba(0,0,0,0.3);
 }
+/* ===== 以下样式追加到 visit.wxss 末尾 ===== */
+
+/* 周切换栏 */
+.week-switcher {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  padding: 12rpx 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.week-switcher-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.week-switcher-text {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #666;
+}
+.week-switcher-text.is-current { color: #6c5ce7; }
+
+/* 切换箭头按钮 */
+.week-nav-btn {
+  width: 56rpx;
+  height: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0eeff;
+  border-radius: 14rpx;
+}
+.week-nav-btn:active { background: #d4c9ff; }
+.nav-arrow {
+  font-size: 40rpx;
+  color: #6c5ce7;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* 本周无课空状态 */
+.empty-week {
+  position: absolute;
+  top: 200rpx;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+}
+.empty-week-text {
+  font-size: 28rpx;
+  color: #ccc;
+}

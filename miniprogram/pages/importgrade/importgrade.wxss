@@ -1,0 +1,54 @@
+page { background-color: #f8f9fa; }
+.container { padding: 40rpx; display: flex; flex-direction: column; align-items: center; }
+
+/* 核心导入区域：超大点击范围 */
+.import-box {
+  width: 100%;
+  background: #ffffff;
+  border: 4rpx dashed #0052D9;
+  border-radius: 32rpx;
+  padding: 80rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+/* 解决“只有文字能点”的关键：增加点击态反馈 */
+.import-box:active {
+  background-color: #eef3fe;
+  transform: scale(0.98);
+}
+
+.upload-icon { margin-bottom: 30rpx; opacity: 0.9; }
+.main-tip { font-size: 34rpx; font-weight: bold; color: #333; margin-bottom: 16rpx; }
+.sub-tip { font-size: 24rpx; color: #999; margin-bottom: 40rpx; }
+
+.file-tags { display: flex; gap: 20rpx; }
+.tag {
+  background: #f0f2f5;
+  color: #666;
+  font-size: 22rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 10rpx;
+}
+
+/* 引导说明卡片 */
+.guide-card {
+  width: 100%;
+  margin-top: 60rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.guide-title { font-size: 28rpx; font-weight: bold; color: #0052D9; margin-bottom: 20rpx; }
+.guide-item { font-size: 24rpx; color: #666; line-height: 1.8; margin-bottom: 10rpx; position: relative; padding-left: 30rpx; }
+
+.back-btn {
+  margin-top: 80rpx;
+  color: #0052D9;
+  font-size: 28rpx;
+  text-decoration: underline;
+}

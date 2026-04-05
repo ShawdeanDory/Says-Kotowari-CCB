@@ -1,0 +1,75 @@
+<view class="container">
+  <view class="section-card header-fixed">
+    <view class="picker-row">
+      <text class="label">目标学期</text>
+      <picker bindchange="bindSemesterChange" value="{{semIndex}}" range="{{semesterArray}}">
+        <view class="picker-value">{{currentSemester}} ▾</view>
+      </picker>
+    </view>
+  </view>
+
+  <scroll-view scroll-y class="course-scroll-area">
+    <view class="course-form-list">
+      <view class="course-card" wx:for="{{courseList}}" wx:key="index">
+        <view class="card-header" wx:if="{{courseList.length > 1}}">
+          <text>课程 {{index + 1}}</text>
+          <text class="delete-link" bindtap="removeCourse" data-index="{{index}}">删除</text>
+        </view>
+
+        <view class="input-group">
+          <view class="input-item flex-3">
+            <text class="input-label">课程名称</text>
+            <input placeholder="选填" value="{{item.courseName}}" bindinput="onInput" data-field="courseName" data-index="{{index}}" />
+          </view>
+          <view class="input-item flex-2">
+            <text class="input-label">学分</text>
+            <input type="digit" placeholder="必填" value="{{item.credit}}" bindinput="onInput" data-field="credit" data-index="{{index}}" />
+          </view>
+        </view>
+
+        <view class="input-group">
+          <view class="input-item">
+            <text class="input-label">成绩</text>
+            <input type="digit" placeholder="如 95" value="{{item.score}}" bindinput="onInput" data-field="score" data-index="{{index}}" />
+          </view>
+          <view class="input-item">
+            <text class="input-label">绩点</text>
+            <input type="digit" placeholder="如 4.0" value="{{item.schoolGpa}}" bindinput="onInput" data-field="schoolGpa" data-index="{{index}}" />
+          </view>
+        </view>
+      </view>
+      <view style="height: 100rpx;"></view>
+    </view>
+  </scroll-view>
+
+  <view class="footer-actions">
+    <view class="secondary-btns">
+      <button class="btn-minor" bindtap="addEmptyCourse">+ 空白行</button>
+      <button class="btn-minor btn-blue" bindtap="openTimetableModal">从课表导入</button>
+    </view>
+    <button class="btn-main" bindtap="submitAll">确认保存</button>
+  </view>
+
+  <view class="modal-mask" wx:if="{{showTimetable}}" bindtap="closeTimetableModal">
+    <view class="modal-panel" catchtap="preventBubbling">
+      <view class="modal-header">
+        <text class="modal-title">选择课表中的课程</text>
+        <view class="close-icon" bindtap="closeTimetableModal">✕</view>
+      </view>
+      <scroll-view scroll-y class="modal-body">
+        <checkbox-group bindchange="onTimetableCheck">
+          <label class="timetable-item" wx:for="{{timetableData}}" wx:key="name">
+            <checkbox value="{{item.name}}" color="#0052d9" />
+            <view class="item-info">
+              <text class="item-name">{{item.name}}</text>
+              <text class="item-desc">{{item.teacher || '老师未录入'}}</text>
+            </view>
+          </label>
+        </checkbox-group>
+      </scroll-view>
+      <view class="modal-footer">
+        <button class="btn-confirm" bindtap="confirmImport">确认导入</button>
+      </view>
+    </view>
+  </view>
+</view>

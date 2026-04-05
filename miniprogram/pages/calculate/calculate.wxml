@@ -1,0 +1,64 @@
+<view class="container">
+  <view class="gpa-card" bindtap="goToAnalysis" hover-class="card-hover">
+    <view class="gpa-main">
+      <text class="gpa-num">{{metrics.totalGpa || '0.00'}}</text>
+      <text class="gpa-label">总绩点 (GPA) 📊</text>
+    </view>
+    <view class="gpa-detail">
+      <view class="detail-item">
+        <text class="val">{{metrics.weightedAverage || '0.0'}}</text>
+        <text class="lab">加权均分</text>
+      </view>
+      <view class="detail-item">
+        <text class="val">{{grades.length}}</text>
+        <text class="lab">已录课程</text>
+      </view>
+    </view>
+    <view class="click-tip">点击查看趋势分析</view>
+  </view>
+
+  <view class="action-row">
+    <button class="mini-btn" bindtap="goToAdd">手动录入</button>
+    <button class="mini-btn btn-import" bindtap="goToImport">Excel导入</button>
+  </view>
+
+  <view class="list-section">
+    <view class="section-header-row">
+      <text class="section-title">成绩明细 (长按记录也可删除)</text>
+      <view class="clear-all-btn" bindtap="clearAllGrades">清空全部</view>
+    </view>
+
+    <scroll-view scroll-y class="grade-list">
+      <view 
+        class="grade-item" 
+        wx:for="{{grades}}" 
+        wx:key="_id" 
+        bindlongpress="deleteGrade" 
+        data-id="{{item._id}}" 
+        data-name="{{item.courseName}}"
+      >
+        <view class="item-left">
+          <text class="c-name">{{item.courseName}}</text>
+          <text class="c-info">{{item.semester}} | {{item.credit}}学分</text>
+        </view>
+        <view class="item-right">
+          <text class="c-score">{{item.score || '0'}}</text>
+          <text class="c-gp">{{item.schoolGpa || '0.0'}} GP</text>
+        </view>
+        <icon 
+          type="clear" 
+          size="18" 
+          color="#ff4d4f" 
+          class="delete-icon" 
+          catchtap="deleteGrade" 
+          data-id="{{item._id}}" 
+          data-name="{{item.courseName}}"
+        />
+      </view>
+      
+      <view class="empty" wx:if="{{grades.length === 0}}">
+        <text>暂无成绩数据，请开始导入</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

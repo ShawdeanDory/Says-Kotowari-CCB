@@ -11,12 +11,12 @@
     </view>
 
     <view 
-      wx:for="{{userList}}" 
-      wx:key="_id" 
-      class="user-card" 
-      bindtap="viewUserSchedule" 
-      data-id="{{item._openid}}"
-    >
+  wx:for="{{userList}}" 
+  wx:key="_id" 
+  class="user-card" 
+  bindtap="viewUserSchedule" 
+  data-name="{{item.userInfo.nickName}}" 
+>
     <image class="avatar" src="{{item.userInfo.avatarUrl || defaultAvatar}}" mode="aspectFill"></image>
       
       <view class="info">

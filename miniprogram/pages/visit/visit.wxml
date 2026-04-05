@@ -1,49 +1,75 @@
 <view class="container">
-  <view class="profile-header" wx:if="{{targetUserInfo}}">
-    <image class="avatar" src="{{targetUserInfo.avatarUrl || defaultAvatar}}"></image>
-    <view class="info">
-      <text class="name">{{targetUserInfo.nickName}}</text>
-      <text class="desc">正在查看 TA 的课程安排</text>
+
+<!-- 顶部用户信息 -->
+<view class="profile-header" wx:if="{{targetUserInfo}}">
+  <image class="avatar" src="{{targetUserInfo.avatarUrl || defaultAvatar}}"></image>
+  <view class="info">
+    <text class="name">{{targetUserInfo.nickName}}</text>
+    <text class="desc">正在查看 TA 的课程安排</text>
+  </view>
+</view>
+
+<view class="timetable-container">
+
+  <!-- 周切换栏 -->
+  <view class="week-switcher">
+    <view class="week-nav-btn" bindtap="prevWeek">
+      <text class="nav-arrow">‹</text>
+    </view>
+    <view class="week-switcher-center">
+      <text class="week-switcher-text {{displayWeek === currentWeek ? 'is-current' : ''}}">
+        第 {{displayWeek}} 周{{displayWeek === currentWeek ? '（本周）' : ''}}
+      </text>
+    </view>
+    <view class="week-nav-btn" bindtap="nextWeek">
+      <text class="nav-arrow">›</text>
     </view>
   </view>
 
-  <view class="timetable-container">
-    
-    <view class="week-header">
-      <view class="corner-box"></view> <view class="week-cells">
-        <view wx:for="{{['一','二','三','四','五']}}" wx:key="*this" class="week-cell">周{{item}}</view>
-      </view>
+  <!-- 星期表头 -->
+  <view class="week-header">
+    <view class="corner-box"></view>
+    <view class="week-cells">
+      <view wx:for="{{['一','二','三','四','五']}}" wx:key="*this" class="week-cell">周{{item}}</view>
     </view>
+  </view>
 
-    <scroll-view scroll-y class="course-scroll">
-      <view class="course-body">
-        
-        <view class="sidebar">
-          <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}" wx:key="*this" class="sidebar-node">
-            {{item}}
-          </view>
+  <!-- 课表滚动区，绑定滑动手势 -->
+  <scroll-view scroll-y class="course-scroll"
+               bindtouchstart="onTouchStart"
+               bindtouchend="onTouchEnd">
+    <view class="course-body">
+
+      <view class="sidebar">
+        <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}" wx:key="*this" class="sidebar-node">
+          {{item}}
         </view>
-
-        <view class="course-grid">
-          <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}" wx:key="*this" class="grid-row-line"></view>
-
-          <view wx:for="{{courses}}" wx:key="index" 
-                class="course-card"
-                bindtap="showCourseDetail"
-                data-item="{{item}}"
-                style="left: {{(item.day - 1) * 20}}%; top: {{(item.start - 1) * 110}}rpx; height: {{item.step * 110 - 10}}rpx; background-color: {{item.color}};">
-            <view class="card-inner">
-              <text class="c-name">{{item.name}}</text>
-              <text class="c-room">{{item.room}}</text>
-            </view>
-          </view>
-        </view>
-
       </view>
-    </scroll-view>
-  </view>
 
-  <view class="float-back-btn" bindtap="goBack">
-    返回广场
-  </view>
+      <view class="course-grid">
+        <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}" wx:key="*this" class="grid-row-line"></view>
+
+        <!-- 空状态 -->
+        <view wx:if="{{courses.length === 0}}" class="empty-week">
+          <text class="empty-week-text">本周暂无课程</text>
+        </view>
+
+        <view wx:for="{{courses}}" wx:key="index"
+              class="course-card"
+              bindtap="showCourseDetail"
+              data-item="{{item}}"
+              style="left: {{(item.day - 1) * 20}}%; top: {{(item.start - 1) * 110}}rpx; height: {{item.step * 110 - 10}}rpx; background-color: {{item.color}};">
+          <view class="card-inner">
+            <text class="c-name">{{item.name}}</text>
+            <text class="c-room">{{item.room}}</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+</view>
+
+<view class="float-back-btn" bindtap="goBack">返回广场</view>
+
 </view>

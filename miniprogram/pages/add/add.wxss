@@ -1,0 +1,180 @@
+page {
+  background-color: #f7f8fa;
+  padding-bottom: 200rpx; /* 为底部按钮留出空间 */
+}
+
+/* 卡片通用样式 */
+.section-card, .course-card {
+  background: #ffffff;
+  margin: 24rpx;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
+}
+
+.picker-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.picker-value {
+  color: #0052d9;
+  font-weight: 600;
+}
+
+/* 课程卡片头部 */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  padding-bottom: 15rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.delete-link {
+  color: #fa5151;
+}
+
+/* 输入框组合 */
+.input-group {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 24rpx;
+}
+
+.input-item {
+  flex: 1;
+}
+
+.flex-3 { flex: 3; }
+.flex-2 { flex: 2; }
+
+.input-label {
+  font-size: 22rpx;
+  color: #888;
+  margin-bottom: 8rpx;
+  display: block;
+}
+
+input {
+  background: #f5f6f7;
+  height: 80rpx;
+  padding: 0 24rpx;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+}
+
+/* 底部操作区 */
+.footer-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  padding: 30rpx 40rpx calc(30rpx + env(safe-area-inset-bottom));
+  box-shadow: 0 -4rpx 20rpx rgba(0,0,0,0.05);
+}
+
+.secondary-btns {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 24rpx;
+}
+
+.btn-minor {
+  flex: 1;
+  font-size: 26rpx;
+  background: #f0f2f5;
+  color: #333;
+}
+
+.btn-blue {
+  background: #e1ecff;
+  color: #0052d9;
+}
+
+.btn-main {
+  background: #0052d9 !important;
+  color: #fff;
+  border-radius: 50rpx;
+  font-weight: 600;
+}
+
+/* 弹窗样式 */
+.modal-mask {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+}
+
+.modal-panel {
+  background: #fff;
+  width: 100%;
+  border-radius: 32rpx 32rpx 0 0;
+  padding: 40rpx 0;
+}
+
+.modal-header {
+  padding: 0 40rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-title { font-weight: bold; font-size: 32rpx; }
+
+.modal-body {
+  max-height: 600rpx;
+  padding: 0 40rpx;
+}
+
+.timetable-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.item-info {
+  margin-left: 20rpx;
+}
+
+.item-name { display: block; font-size: 28rpx; font-weight: 500; }
+.item-desc { font-size: 22rpx; color: #999; }
+
+.modal-footer {
+  padding: 40rpx 40rpx 10rpx;
+}
+
+.btn-confirm {
+  background: #0052d9;
+  color: #fff;
+  border-radius: 12rpx;
+}
+/* 1. 滚动区域高度计算：屏幕高度 - 顶部学期高度 - 底部按钮高度 */
+.course-scroll-area {
+  height: calc(100vh - 120rpx - 320rpx); /* 根据你实际高度微调 */
+  width: 100%;
+}
+
+/* 2. 增强底部操作区的“遮挡”能力 */
+.footer-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff; /* 必须是纯色，不能透明 */
+  padding: 30rpx 40rpx calc(30rpx + env(safe-area-inset-bottom));
+  box-shadow: 0 -10rpx 30rpx rgba(0,0,0,0.08); /* 加深阴影更有层次感 */
+  z-index: 99; /* 确保在最上层 */
+}
+
+/* 3. 如果不想用 scroll-view，也可以简单地给列表底部留出超大空白 */
+.course-form-list {
+  padding-bottom: 400rpx; /* 确保最后一张卡片不会被按钮挡住 */
+}
